@@ -1,7 +1,7 @@
 {
   "java.configuration.updateBuildConfiguration": "interactive",
   "java.checkstyle.configuration": "${workspaceFolder}/tools/maven/checkstyle.xml",
-  "java.checkstyle.version": "8.23",
+  "java.checkstyle.version": "8.14",
   "java.checkstyle.properties": {
       "checkstyle.suppressions.file": "${workspaceFolder}/tools/maven/suppressions.xml"
   },
