@@ -1,0 +1,10 @@
+{
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.checkstyle.configuration": "${workspaceFolder}/tools/maven/checkstyle.xml",
+  "java.checkstyle.version": "8.23",
+  "java.checkstyle.properties": {
+      "checkstyle.suppressions.file": "${workspaceFolder}/tools/maven/suppressions.xml"
+  },
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable",
+}
