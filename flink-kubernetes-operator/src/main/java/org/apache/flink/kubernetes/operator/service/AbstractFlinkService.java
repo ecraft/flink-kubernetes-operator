@@ -113,6 +113,7 @@ import io.fabric8.kubernetes.client.dsl.Resource;
 import io.fabric8.kubernetes.client.dsl.Waitable;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.ObjectUtils;
+import org.fellowmind.flink.client.program.rest.CustomRestClusterClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -838,7 +839,7 @@ public abstract class AbstractFlinkService implements FlinkService {
                                 clusterId, namespace));
         final String restServerAddress = String.format("http://%s:%s", host, port);
         LOG.debug("Creating RestClusterClient({})", restServerAddress);
-        return new RestClusterClient<>(
+        return new CustomRestClusterClient<String>(
                 operatorRestConf,
                 clusterId,
                 (c, e) -> new StandaloneClientHAServices(restServerAddress));
