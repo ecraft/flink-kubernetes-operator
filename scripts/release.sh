@@ -18,19 +18,19 @@ ORG=ecraft
 CONTAINER_NAME="$ORG/$IMAGE_NAME"
 
 # Get tags from docker hub to show latest version
-DOCKERHUB_TAGS=`docker-hub -o $ORG -r $IMAGE_NAME tags --format json`
-if [[ "$DOCKERHUB_TAGS" == *"Error"* ]]; then
-  echo "Failed to retrieve tags from Docker Hub."
-  echo "Make sure the docker-hub cli is installed:"
-  echo "'pip3 install docker-hub'"
-  echo "Make sure you are logged in to docker-hub:"
-  echo "'docker-hub login'"
-  echo "$DOCKERHUB_TAGS"
-else
-  # Show the latest published version
-  LATEST_PUBLISHED=`echo $DOCKERHUB_TAGS | jq -r 'max_by(."Last updated").Name'`
-  echo "Latest published version is: $LATEST_PUBLISHED"
-fi
+# DOCKERHUB_TAGS=`docker-hub -o $ORG -r $IMAGE_NAME tags --format json`
+# if [[ "$DOCKERHUB_TAGS" == *"Error"* ]]; then
+#   echo "Failed to retrieve tags from Docker Hub."
+#   echo "Make sure the docker-hub cli is installed:"
+#   echo "'pip3 install docker-hub'"
+#   echo "Make sure you are logged in to docker-hub:"
+#   echo "'docker-hub login'"
+#   echo "$DOCKERHUB_TAGS"
+# else
+#   # Show the latest published version
+#   LATEST_PUBLISHED=`echo $DOCKERHUB_TAGS | jq -r 'max_by(."Last updated").Name'`
+#   echo "Latest published version is: $LATEST_PUBLISHED"
+# fi
 
 # Create a git tag for the given service and version number
 GIT_TAG="release/$IMAGE_NAME/$VERSION"
